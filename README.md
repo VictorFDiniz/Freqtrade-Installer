@@ -3,5 +3,5 @@
 Install command for Ubuntu 18:
 
 ```
-curl -L https://raw.githubusercontent.com/VictorFDiniz/Freqtrade-Installer/main/Install.sh | bash
+wget https://raw.githubusercontent.com/VictorFDiniz/Freqtrade-Installer/main/Install.sh; chmod +x Install; ./Install.sh
 ```
