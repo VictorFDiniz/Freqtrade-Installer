@@ -1,14 +1,14 @@
 #!/bin/bash
 
-apt-get update && apt-get upgrade -y
-apt-get install build-essential -y
+sudo apt-get update && apt-get upgrade -y
+sudo apt-get install build-essential -y
 
 # Python
 
-apt-get install software-properties-common
-add-apt-repository ppa:deadsnakes/ppa
-apt-get update
-apt-get install python3.8
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get install python3.8
 
 # install packages
 
