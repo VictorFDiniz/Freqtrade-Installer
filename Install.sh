@@ -14,11 +14,11 @@
   ) > /dev/null 2>&1 &
 while true; do
 	for ((i = 0; i < 20; i++)); do
-  echo -ne "\033[1;31m#"
+  echo -ne "#"
   sleep 0.1
 done
   [[ -e $HOME/end ]] && rm $HOME/end && break
-  echo -e "\033[1;31m#"
+  echo -e "#"
   sleep 1
   tput cuu1
   tput dl1
@@ -29,9 +29,9 @@ done
   fun_bar 'apt-get install build-essential' 'apt-get install figlet'
   
   clear
-  echo -e "\033[1;36m////////////////////////////////////////////////////////////"
+  echo -e "////////////////////////////////////////////////////////////"
   figlet FreqBot
-  echo -e "\033[1;36m////////////////////////////////////////////////////////////"
+  echo -e "////////////////////////////////////////////////////////////"
   echo ""
   echo ""
 
