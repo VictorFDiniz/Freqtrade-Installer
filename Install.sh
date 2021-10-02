@@ -26,8 +26,10 @@ done
 echo ""
 }
   echo "Updating"
+  echo ""
   fun_bar 'apt-get update' 'apt-get upgrade'
-  echo "Some Packages"
+  echo "Installing some packages"
+  echo ""
   fun_bar 'apt-get install build-essential' 'apt-get install figlet'
   
   clear
@@ -36,7 +38,7 @@ echo ""
   echo -e "////////////////////////////////////////////////////////////"
   echo ""
   echo ""
-
+  sleep 0.5s
 
 # Python
 
@@ -55,3 +57,4 @@ echo ""
 
   cd freqtrade
   ./setup.sh -i
+  rm -rf Install.sh
