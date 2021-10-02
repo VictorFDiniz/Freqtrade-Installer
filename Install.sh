@@ -24,8 +24,9 @@ done
   tput dl1
 done
 }
-
+  echo "updating and upgrading"
   fun_bar 'apt-get update' 'apt-get upgrade'
+  echo "installing build-essential and figlet"
   fun_bar 'apt-get install build-essential' 'apt-get install figlet'
   
   clear
