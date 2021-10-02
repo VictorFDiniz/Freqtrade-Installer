@@ -23,10 +23,11 @@ done
   tput cuu1
   tput dl1
 done
+echo ""
 }
-  echo "updating and upgrading"
+  echo "Updating"
   fun_bar 'apt-get update' 'apt-get upgrade'
-  echo "installing build-essential and figlet"
+  echo "Some Packages"
   fun_bar 'apt-get install build-essential' 'apt-get install figlet'
   
   clear
