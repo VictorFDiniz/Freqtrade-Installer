@@ -26,10 +26,8 @@ done
 echo ""
 }
   echo "Updating"
-  echo ""
   fun_bar 'apt-get update' 'apt-get upgrade'
   echo "Installing some packages"
-  echo ""
   fun_bar 'apt-get install build-essential' 'apt-get install figlet'
   
   clear
