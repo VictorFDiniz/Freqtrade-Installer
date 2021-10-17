@@ -68,7 +68,7 @@ if [[ $_fail = "s" || $_fail = "S" ]]; then
   action_blocklist_de  = blocklist_de[email="%(sender)s", service=%(filter)s, apikey="%(blocklist_de_apikey)s", agent="%(fail2ban_agent)s"]
   action_badips = badips.py[category="%(__name__)s", banaction="%(banaction)s", agent="%(fail2ban_agent)s"]
   action_badips_report = badips[category="%(__name__)s", agent="%(fail2ban_agent)s"]
-  action = %(action_)s'
+  action = %(action_)s
   
   [sshd]
   enabled = true
