@@ -89,6 +89,7 @@
   [apache-noscript]
   port     = http,https
   logpath  = %(apache_error_log)s
+  
   [apache-overflows]
   port     = http,https
   logpath  = %(apache_error_log)s
@@ -153,21 +154,22 @@
   [openwebmail]
   port     = http,https
   logpath  = /var/log/openwebmail.log
+  
   [horde]
   port     = http,https
   logpath  = /var/log/horde/horde.log
   
-  [groupoffice]
-  port     = http,https
-  logpath  = /home/groupoffice/log/info.log
+  #[groupoffice]
+  #port     = http,https
+  #logpath  = /home/groupoffice/log/info.log
   
-  [sogo-auth]
-  port     = http,https
-  logpath  = /var/log/sogo/sogo.log
+  #[sogo-auth]
+  #port     = http,https
+  #logpath  = /var/log/sogo/sogo.log
   
-  [tine20]
-  logpath  = /var/log/tine20/tine20.log
-  port     = http,https
+  #[tine20]
+  #logpath  = /var/log/tine20/tine20.log
+  #port     = http,https
   
   [drupal-auth]
   port     = http,https
@@ -203,10 +205,10 @@
   logpath  = %(pureftpd_log)s
   backend  = %(pureftpd_backend)s
   
-  [gssftpd]
-  port     = ftp,ftp-data,ftps,ftps-data
-  logpath  = %(syslog_daemon)s
-  backend  = %(syslog_backend)s
+  #[gssftpd]
+  #port     = ftp,ftp-data,ftps,ftps-data
+  #logpath  = %(syslog_daemon)s
+  #backend  = %(syslog_backend)s
   
   [wuftpd]
   port     = ftp,ftp-data,ftps,ftps-data
@@ -220,6 +222,7 @@
   [assp]
   port     = smtp,465,submission
   logpath  = /root/path/to/assp/logs/maillog.txt
+  
   [courier-smtp]
   port     = smtp,465,submission
   logpath  = %(syslog_mail)s
@@ -264,6 +267,7 @@
   [solid-pop3d]
   port    = pop3,pop3s
   logpath = %(solidpop3d_log)s
+  
   [exim]
   port   = smtp,465,submission
   logpath = %(exim_main_log)s
