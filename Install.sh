@@ -2,7 +2,7 @@
 
   [[ "$EUID" -ne 0 ]] && echo "Please, run this as root" && exit 1
   
-  apt-get update -y && apt-get upgrade -y
+  apt-get update && apt-get upgrade -y
   apt-get -y install build-essential figlet git
   
   clear
