@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
   [[ "$EUID" -ne 0 ]] && echo "Please, run this as root" && exit 1
   
+  cd $HOME
   apt-get update && apt-get upgrade -y
   apt-get -y install build-essential figlet git
   
@@ -11,14 +12,14 @@
   echo "////////////////////////////////////////////////////////////"
   echo ""
   echo ""
-  sleep 1.5s
+  sleep 1s
 
 # Python
 
-  apt-get install software-properties-common
+  apt-get install software-properties-common -y
   add-apt-repository ppa:deadsnakes/ppa
   apt-get update
-  apt-get install python3.8
+  apt-get install python3.8 -y
 
 # install packages
 
@@ -30,4 +31,4 @@
 
   cd freqtrade
   ./setup.sh -i
-  rm -rf Install.sh
+  rm $HOME/Install.sh

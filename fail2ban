@@ -1,10 +1,6 @@
-#!/bin/bash  
+#!/usr/bin/env bash  
   
   apt-get install fail2ban
-  cd $HOME
-  git clone https://github.com/fail2ban/fail2ban.git
-  cd fail2ban
-  python setup.py install
   
   echo '[INCLUDES]
   before = paths-debian.conf
@@ -397,5 +393,3 @@
   [haproxy-http-auth]
   logpath  = /var/log/haproxy.log' > /etc/fail2ban/jail.local
   service fail2ban restart > /dev/null 2>&1
-
-fi
