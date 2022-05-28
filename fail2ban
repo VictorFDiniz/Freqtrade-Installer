@@ -1,6 +1,6 @@
 #!/usr/bin/env bash  
   
-  apt-get install fail2ban
+  apt-get install fail2ban -y
   
   echo '[INCLUDES]
   before = paths-debian.conf

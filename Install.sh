@@ -14,6 +14,13 @@
   echo ""
   sleep 1s
 
+  read -p "Do you want to install FreqTrade with Fail2Ban? [Y/n]" -e -i y x
+  if [[ $x =~ [Yy] ]]; then
+    wget https://raw.githubusercontent.com/VictorFDiniz/Freqtrade-Installer/main/fail2ban
+    chmod +x fail2ban
+    ./fail2ban
+  fi
+
 # Python
 
   apt-get install software-properties-common -y
@@ -32,3 +39,4 @@
   cd freqtrade
   ./setup.sh -i
   rm $HOME/Install.sh
+  rm $HOME/fail2ban
