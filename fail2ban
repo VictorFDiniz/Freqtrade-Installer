@@ -244,7 +244,8 @@ action = %(action_)s
 # To use more aggressive sshd modes set filter parameter "mode" in jail.local:
 # normal (default), ddos, extra or aggressive (combines all).
 # See "tests/files/logs/sshd" or "filter.d/sshd.conf" for usage example and details.
-#mode   = normal
+enabled = true
+mode   = normal
 port    = ssh
 logpath = %(sshd_log)s
 backend = %(sshd_backend)s
@@ -252,6 +253,7 @@ backend = %(sshd_backend)s
 
 [dropbear]
 
+enabled = true
 port     = ssh
 logpath  = %(dropbear_log)s
 backend  = %(dropbear_backend)s
@@ -268,6 +270,7 @@ logpath  = %(auditd_log)s
 #
 
 [apache-auth]
+
 
 port     = http,https
 logpath  = %(apache_error_log)s
