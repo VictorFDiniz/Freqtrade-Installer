@@ -2,7 +2,7 @@
   
   apt-get install fail2ban -y
   
-echo "#
+echo '#
 # WARNING: heavily refactored in 0.9.0 release.  Please review and
 #          customize settings for your setup.
 #
@@ -31,7 +31,7 @@ echo "#
 
 
 
-# Comments: use '#' for comment lines and ';' (following a space) for inline comments
+# Comments: use "#" for comment lines and ";" (following a space) for inline comments
 
 
 [INCLUDES]
@@ -145,7 +145,7 @@ sender = root@<fq-hostname>
 
 # E-mail action. Since 0.8.1 Fail2Ban uses sendmail MTA for the
 # mailing. Change mta configuration parameter to mail if you want to
-# revert to conventional 'mail'.
+# revert to conventional "mail".
 mta = sendmail
 
 # Default protocol
@@ -225,7 +225,7 @@ action_badips_report = badips[category="%(__name__)s", agent="%(fail2ban_agent)s
 #
 action_abuseipdb = abuseipdb
 
-# Choose default action.  To change, just override value of 'action' with the
+# Choose default action.  To change, just override value of "action" with the
 # interpolation to the chosen action shortcut (e.g.  action_mw, action_mwl, etc) in jail.local
 # globally (section [DEFAULT]) or per specific section
 action = %(action_)s
@@ -346,10 +346,10 @@ logpath = /opt/openhab/logs/request.log
 port    = http,https
 logpath = %(nginx_error_log)s
 
-# To use 'nginx-limit-req' jail you should have `ngx_http_limit_req_module` 
+# To use "nginx-limit-req" jail you should have `ngx_http_limit_req_module` 
 # and define `limit_req` and `limit_req_zone` as described in nginx documentation
 # http://nginx.org/en/docs/http/ngx_http_limit_req_module.html
-# or for example see in 'config/filter.d/nginx-limit-req.conf'
+# or for example see in "config/filter.d/nginx-limit-req.conf"
 [nginx-limit-req]
 port    = http,https
 logpath = %(nginx_error_log)s
@@ -361,7 +361,7 @@ logpath  = %(nginx_error_log)s
 maxretry = 2
 
 
-# Ban attackers that try to use PHP's URL-fopen() functionality
+# Ban attackers that try to use PHPs URL-fopen() functionality
 # through GET/POST variables. - Experimental, with more than a year
 # of usage in production environments.
 
@@ -379,7 +379,7 @@ logpath = %(suhosin_log)s
 
 
 [lighttpd-auth]
-# Same as above for Apache's mod_auth
+# Same as above for Apaches mod_auth
 # It catches wrong authentifications
 port    = http,https
 logpath = %(lighttpd_error_log)s
@@ -519,7 +519,7 @@ backend  = %(wuftpd_backend)s
 # or overwrite it in jails.local to be
 # logpath = %(syslog_authpriv)s
 # if you want to rely on PAM failed login attempts
-# vsftpd's failregex should match both of those formats
+# vsftpds failregex should match both of those formats
 port     = ftp,ftp-data,ftps,ftps-data
 logpath  = %(vsftpd_log)s
 
@@ -756,7 +756,7 @@ logpath  = %(mysql_log)s
 backend  = %(mysql_backend)s
 
 
-# Log wrong MongoDB auth (for details see filter 'filter.d/mongodb-auth.conf')
+# Log wrong MongoDB auth (for details see filter "filter.d/mongodb-auth.conf")
 [mongodb-auth]
 # change port when running with "--shardsvr" or "--configsvr" runtime operation
 port     = 27017
@@ -782,7 +782,7 @@ findtime = 1d
 # ports such as iptables-allports, shorewall
 
 [pam-generic]
-# pam-generic filter can be customized to monitor specific subset of 'tty's
+# pam-generic filter can be customized to monitor specific subset of "ttys
 banaction = %(banaction_allports)s
 logpath  = %(syslog_authpriv)s
 backend  = %(syslog_backend)s
@@ -869,7 +869,7 @@ logpath  = /var/log/system.log
 logencoding = utf-8
 
 [haproxy-http-auth]
-# HAProxy by default doesn't log to file you'll need to set it up to forward
+# HAProxy by default doesnt log to file youll need to set it up to forward
 # logs to a syslog server which would then write them to disk.
 # See "haproxy-http-auth" filter for a brief cautionary note when setting
 # maxretry and findtime.
@@ -893,6 +893,6 @@ backend = %(syslog_backend)s
 # Zoneminder HTTP/HTTPS web interface auth
 # Logs auth failures to apache2 error log
 port    = http,https
-logpath = %(apache_error_log)s" > /etc/fail2ban/jail.local
+logpath = %(apache_error_log)s' > /etc/fail2ban/jail.local
 
 service fail2ban restart > /dev/null 2>&1
